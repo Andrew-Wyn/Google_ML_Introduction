@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  app:
+    image: $BASE_IMAGE
+    entrypoint: /bin/sleep infinity
+    working_dir: /usr/src/app
+    volumes:
+      - "../source/:/usr/src/app"
+    ports:
+      - "$PORT"
+    environment:
+      - DNSDOCK_ALIAS=$DNSDOCK_ALIAS
+      - VIRTUAL_PORT=$PORT
+      - VIRTUAL_HOST=$DNSDOCK_ALIAS
+
+  

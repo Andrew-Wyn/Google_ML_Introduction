@@ -12,10 +12,6 @@ from sklearn import metrics
 import tensorflow as tf
 from tensorflow.python.data import Dataset
 
-tf.logging.set_verbosity(tf.logging.ERROR)
-pd.options.display.max_rows = 10
-pd.options.display.float_format = '{:.1f}'.format
-
 
 # INPUT FUNCTION
 # we need to define an input function, which instructs TensorFlow how to preprocess the data,
@@ -150,6 +146,9 @@ def train_model(learning_rate, steps, batch_size, input_feature="total_rooms"):
 
 
 if __name__ == "__main__":
+    tf.logging.set_verbosity(tf.logging.ERROR)
+    pd.options.display.max_rows = 10
+    pd.options.display.float_format = '{:.1f}'.format
 
     # load our data set
     california_housing_dataframe = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_train.csv", sep=",")

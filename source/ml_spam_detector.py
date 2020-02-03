@@ -52,6 +52,7 @@ if __name__ == "__main__":
     vectorizer = CountVectorizer(analyzer=process_text)
     # feature
     messages_bow = vectorizer.fit_transform(df['text'].head(2)) # dovrebbe essere una feature impostata come binned/bucketized rivedere parte del corso
+    # capire come identificare univocamente le parole
 
     print(vectorizer.get_feature_names())
 
